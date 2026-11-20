@@ -1,0 +1,10 @@
+
+services:
+  marketplace:
+    build: .
+    container_name: electronics-marketplace
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./marketplace.db:/app/marketplace.db
+    restart: unless-stopped

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeriTech | Certified Pre-Owned Electronics & Escrow Marketplace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <div class="brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+      </div>
+      <div class="brand-title">VeriTech <span>Market</span></div>
+    </div>
+
+    <!-- Multi-Role Switcher Tabs -->
+    <nav class="nav-tabs">
+      <button class="nav-tab-btn active" data-view="buyer-view" onclick="switchView('buyer-view')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Buyer Marketplace
+      </button>
+      <button class="nav-tab-btn" data-view="seller-view" onclick="switchView('seller-view')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Seller Diagnostics & Listing
+      </button>
+      <button class="nav-tab-btn" data-view="verifier-view" onclick="switchView('verifier-view')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Lab Verifier Workbench
+      </button>
+      <button class="nav-tab-btn" data-view="escrow-view" onclick="switchView('escrow-view')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Escrow Trust Vault
+      </button>
+    </nav>
+
+    <!-- Platform Health & Volume Stats -->
+    <div class="nav-stats">
+      <div class="stat-pill">
+        <div class="pulse-dot"></div>
+        <span id="stat-prevent-rate">99.8%</span> Fraud Prevention
+      </div>
+      <div class="stat-pill" style="background: rgba(6, 182, 212, 0.12); border-color: rgba(6, 182, 212, 0.3); color: #38bdf8;">
+        <span id="stat-escrow-vol">$0.00</span> in Trust Escrow
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <!-- ========================================== -->
+    <!-- VIEW 1: BUYER MARKETPLACE                  -->
+    <!-- ========================================== -->
+    <section id="buyer-view" class="view-section active">
+      <!-- Hero Banner -->
+      <div class="hero-banner">
+        <h1 class="hero-title">Zero-Risk Pre-Owned Electronics</h1>
+        <p class="hero-subtitle">
+          Eliminating lemon risk. Every single phone, laptop, and console is physically inspected by certified technicians, backed by cryptographic SHA-256 hardware passports, and held in third-party escrow until you approve.
+        </p>
+        <div class="trust-pillars">
+          <div class="trust-pillar-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            40-Point Laboratory Hardware Bench Testing
+          </div>
+          <div class="trust-pillar-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Cryptographic Tamper-Evident SHA-256 Passport
+          </div>
+          <div class="trust-pillar-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Protected 48-Hour In-Hand Inspection Window
+          </div>
+          <div class="trust-pillar-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            GSMA Anti-Theft & Blacklist Verification
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-bar">
+        <div class="filter-group">
+          <span style="font-size: 0.8rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Category:</span>
+          <button class="filter-btn filter-category-btn active" data-cat="ALL">All Electronics</button>
+          <button class="filter-btn filter-category-btn" data-cat="Smartphones">Smartphones</button>
+          <button class="filter-btn filter-category-btn" data-cat="Laptops">Laptops</button>
+          <button class="filter-btn filter-category-btn" data-cat="Tablets">Tablets</button>
+          <button class="filter-btn filter-category-btn" data-cat="Audio">Audio</button>
+          <button class="filter-btn filter-category-btn" data-cat="Gaming Handhelds">Gaming</button>
+        </div>
+
+        <div class="filter-group">
+          <span style="font-size: 0.8rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Grade:</span>
+          <button class="filter-btn filter-grade-btn active" data-grade="ALL">All Grades</button>
+          <button class="filter-btn filter-grade-btn" data-grade="A_PRISTINE">A+ Pristine (10/10)</button>
+          <button class="filter-btn filter-grade-btn" data-grade="A_EXCELLENT">A Excellent (9/10)</button>
+          <button class="filter-btn filter-grade-btn" data-grade="B_GOOD">B Good (8/10)</button>
+        </div>
+      </div>
+
+      <!-- Marketplace Inventory Grid -->
+      <div id="marketplace-grid" class="device-grid">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 2: SELLER DIAGNOSTICS & LISTING       -->
+    <!-- ========================================== -->
+    <section id="seller-view" class="view-section">
+      <div class="hero-banner" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);">
+        <h1 class="hero-title">Sell Pre-Owned Electronics at Top Value</h1>
+        <p class="hero-subtitle">
+          Run our automated pre-check diagnostics to establish authenticity, lock in an upfront quote, and receive a prepaid insured shipping box to our verification hub.
+        </p>
+      </div>
+
+      <div class="seller-workspace">
+        <!-- Left: Listing Creation Form -->
+        <div class="seller-form-card">
+          <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 1.25rem;">Device Details</h2>
+          <form id="seller-listing-form" onsubmit="handleSellerListingSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Device Title</label>
+              <input type="text" id="sell-title" class="form-input" placeholder="e.g. Google Pixel 8 Pro 256GB Obsidian" required />
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Brand</label>
+                <input type="text" id="sell-brand" class="form-input" placeholder="e.g. Google, Apple, Sony" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Category</label>
+                <select id="sell-category" class="form-select">
+                  <option value="Smartphones">Smartphones</option>
+                  <option value="Laptops">Laptops</option>
+                  <option value="Tablets">Tablets</option>
+                  <option value="Audio">Audio</option>
+                  <option value="Gaming Handhelds">Gaming Handhelds</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">15-Digit IMEI or Serial Number</label>
+              <div style="display: flex; gap: 0.5rem;">
+                <input type="text" id="sell-imei" class="form-input" placeholder="Dial *#06# to reveal IMEI" required />
+                <button type="button" class="filter-btn" style="white-space: nowrap;" onclick="DiagnosticsEngine.simulateGSMAIMEICheck('sell-imei', 'imei-check-result')">
+                  Verify GSMA
+                </button>
+              </div>
+              <div id="imei-check-result"></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Original MSRP ($)</label>
+                <input type="number" id="sell-msrp" class="form-input" placeholder="999.00" step="10" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Your Asking Price ($)</label>
+                <input type="number" id="sell-price" class="form-input" placeholder="650.00" step="10" required />
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Storage Capacity</label>
+                <input type="text" id="sell-storage" class="form-input" placeholder="e.g. 256GB" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Device Color</label>
+                <input type="text" id="sell-color" class="form-input" placeholder="e.g. Space Gray" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Declared Condition</label>
+              <select id="sell-condition" class="form-select">
+                <option value="Flawless / Like New">Flawless / Like New (No visible scratches)</option>
+                <option value="Very Good">Very Good (Light hairline micro-scratches)</option>
+                <option value="Good">Good (Minor cosmetic wear on frame)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Seller Name & City</label>
+              <input type="text" id="sell-name" class="form-input" placeholder="e.g. Michael Jordan (Chicago)" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Image URL (Optional)</label>
+              <input type="url" id="sell-image" class="form-input" placeholder="https://images.unsplash.com/..." />
+            </div>
+
+            <button type="submit" class="btn-escrow-buy" style="margin-top: 1rem;">
+              Create Listing & Order Free Lab Shipping Kit
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Interactive Client-Side Diagnostics Suite -->
+        <div class="diag-suite-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+            <h2 style="font-size: 1.35rem; font-weight: 800;">Hardware Pre-Diagnostics</h2>
+            <span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600;">Self-Verification Suite</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+            Run these browser tests on your selling device. Passing preliminary tests qualifies your listing for fast-track 24h payout.
+          </p>
+
+          <!-- 1. Touchscreen Matrix Grid Test -->
+          <div style="margin-bottom: 1.5rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); padding: 1.1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-weight: 700; font-size: 0.9rem;">1. Touchscreen Digitizer Matrix</span>
+              <span id="touch-badge" class="filter-btn" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">INCOMPLETE</span>
+            </div>
+            <div style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 0.5rem;" id="touch-progress">
+              Drag mouse or finger across the entire grid to test responsiveness:
+            </div>
+            <div class="touch-test-box">
+              <canvas id="touch-canvas" class="touch-grid-canvas"></canvas>
+            </div>
+            <button type="button" class="filter-btn" style="font-size: 0.75rem;" onclick="DiagnosticsEngine.resetTouchGrid('touch-progress', 'touch-badge')">
+              Reset Touch Test
+            </button>
+          </div>
+
+          <!-- 2. Dead Pixel & Color Uniformity -->
+          <div style="margin-bottom: 1.5rem; background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); padding: 1.1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-weight: 700; font-size: 0.9rem;">2. Dead Pixel & Sub-pixel Test</span>
+              <span class="check-badge-pass">READY</span>
+            </div>
+            <div id="dead-pixel-label" style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 0.5rem;">
+              Click below to cycle Red, Green, Blue, White, Black full screens:
+            </div>
+            <div id="dead-pixel-box" class="dead-pixel-test-box" style="background: #FF0000;">
+              Click To Cycle Color Tests
+            </div>
+          </div>
+
+          <!-- 3. Audio Frequency & Mic Test -->
+          <div style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); padding: 1.1rem; border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+              <span style="font-weight: 700; font-size: 0.9rem;">3. Acoustic & Speaker Response</span>
+              <span id="audio-badge" class="filter-btn" style="font-size: 0.72rem; padding: 0.2rem 0.5rem;">PENDING</span>
+            </div>
+            <div id="audio-feedback" style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 0.75rem;">
+              Plays a calibrated sine-wave burst to test stereo speakers.
+            </div>
+            <button type="button" class="filter-btn" onclick="DiagnosticsEngine.simulateAudioTest('audio-badge', 'audio-feedback')">
+              Run Acoustic Diagnostic Burst
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 3: LAB VERIFIER WORKBENCH             -->
+    <!-- ========================================== -->
+    <section id="verifier-view" class="view-section">
+      <div class="workbench-header">
+        <div>
+          <h1 style="font-size: 1.6rem; font-weight: 800;">Certified Testing Hub & Workbench</h1>
+          <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 0.2rem;">
+            Authorized Hub: Bay Area Precision Diagnostic Facility (ISO 9001:2026 Certified)
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.8rem; align-items: center;">
+          <span style="font-size: 0.85rem; color: #34d399; font-weight: 600;">Hardware Flasher v4.2 Connected</span>
+          <button class="filter-btn active" onclick="loadVerifierQueue()">Refresh Queue</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 340px 1fr; gap: 1.75rem;">
+        <!-- Left: Queue of devices -->
+        <div>
+          <h3 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.85rem; color: #94a3b8; text-transform: uppercase;">Incoming Lab Queue</h3>
+          <div id="verifier-queue" style="display: flex; flex-direction: column; gap: 0.85rem;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Right: Active Testing Station -->
+        <div id="workbench-details">
+          <div style="padding: 4rem; text-align: center; color: #9ca3af; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border-color);">
+            Select a device from the testing queue on the left to begin bench testing.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 4: ESCROW TRUST VAULT                 -->
+    <!-- ========================================== -->
+    <section id="escrow-view" class="view-section">
+      <div class="hero-banner" style="background: linear-gradient(135deg, rgba(6, 78, 59, 0.5) 0%, rgba(15, 23, 42, 0.8) 100%); border-color: rgba(16, 185, 129, 0.3);">
+        <h1 class="hero-title">Escrow Trust Settlement Vault</h1>
+        <p class="hero-subtitle">
+          All financial transactions are held in bankruptcy-remote FDIC escrow accounts. Funds are only unlocked once physical verification passes and the buyer confirms satisfaction within the 48-hour window.
+        </p>
+      </div>
+
+      <div id="escrow-vault-content">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal for Device Passport & Escrow Checkout -->
+  <div id="device-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div style="font-size: 1.1rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Device Verification Passport & Checkout
+        </div>
+        <button class="modal-close-btn" onclick="closeDeviceModal()">✕</button>
+      </div>
+      <div id="modal-content" class="modal-body">
+        <!-- Injected via openDeviceDetailModal -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/diagnostics.js"></script>
+  <script src="js/escrow.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
