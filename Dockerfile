@@ -5,6 +5,6 @@ WORKDIR /app
 
 COPY . .
 
-EXPOSE 8000
+EXPOSE 80
 
-CMD ["python", "server.py", "8000"]
+CMD ["sh", "-c", "python server.py ${PORT:-80}"]
